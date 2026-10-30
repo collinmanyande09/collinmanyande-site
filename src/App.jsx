@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Menu from './components/Menu';
 import Hero from './components/Hero';
 import Panel from './components/Panel';
+import Chatbot from './components/Chatbot';
 import { defaultHero, views } from './data';
 
 export default function App() {
@@ -85,6 +86,7 @@ export default function App() {
         aria-hidden="true"
       />
       <Panel view={view} dark={panelDark} onClose={closePanel} onNavigate={setView} />
+      {!loading && !menuOpen && !view && <Chatbot onNavigate={setView} />}
     </>
   );
 }
